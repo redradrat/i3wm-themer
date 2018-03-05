@@ -113,7 +113,7 @@
 /*************
  ! Base states
  *************/
-*:selected, .gtkstyle-fallback:selected, GucharmapChartable:focus, GucharmapChartable:hover, GucharmapChartable:active, GucharmapChartable:selected, .gedit-document-panel-document-row:selected, .gedit-document-panel-document-row:selected:hover, GeditViewFrame .gedit-search-slider .not-found:selected, :focus:selected, GucharmapChartable:focus, .gedit-document-panel-document-row:focus:selected:hover, GeditViewFrame .gedit-search-slider .not-found:focus:selected {
+:selected, .gtkstyle-fallback:selected, GucharmapChartable:focus, GucharmapChartable:hover, GucharmapChartable:active, GucharmapChartable:selected, .gedit-document-panel-document-row:selected, .gedit-document-panel-document-row:selected:hover, GeditViewFrame .gedit-search-slider .not-found:selected, :focus:selected, GucharmapChartable:focus, .gedit-document-panel-document-row:focus:selected:hover, GeditViewFrame .gedit-search-slider .not-found:focus:selected {
   background-color: #1e272b;
   color: #78824b; }
 
@@ -191,7 +191,7 @@ assistant .sidebar label.highlight {
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#1e272b), to(transparent)); } }
 stacksidebar row.needs-attention > label {
   animation: needs_attention 150ms ease-in;
-  background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#1e272b), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.45, to(rgba(255, 255, 255, 0.76923)), to(transparent));
+  background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#1e272b), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.45, to(rgba(255, 255, 255, 0.7692307692)), to(transparent));
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
   background-position: right 3px, right 2px; }
@@ -215,11 +215,7 @@ button, headerbar button, .titlebar:not(headerbar) button, toolbar button, toolb
   transition: 150ms ease;
   outline-color: transparent; }
 
-calendar.view, calendar.view:backdrop, calendar.button, calendar.button:hover, calendar.button:backdrop, calendar.button:disabled, menu menuitem calendar.button,
-.menu menuitem calendar.button,
-.context-menu menuitem calendar.button, menu menuitem calendar.button:hover,
-.menu menuitem calendar.button:hover,
-.context-menu menuitem calendar.button:hover, modelbutton.flat,
+calendar.view, calendar.view:backdrop, calendar.button, calendar.button:hover, calendar.button:backdrop, calendar.button:disabled, menu menuitem calendar.button, .menu menuitem calendar.button, .context-menu menuitem calendar.button, menu menuitem calendar.button:hover, .menu menuitem calendar.button:hover, .context-menu menuitem calendar.button:hover, modelbutton.flat,
 menuitem.button.flat, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:active:hover {
   border-color: transparent;
   background-color: transparent;
@@ -2355,9 +2351,9 @@ headerbar.selection-mode,
       -gtk-icon-shadow: none; }
   headerbar.selection-mode .dim-label, headerbar.selection-mode label.separator, .selection-menu headerbar.selection-mode .dim-label, .selection-menu headerbar.selection-mode label.separator,
   .titlebar:not(headerbar).selection-mode .dim-label,
-  .titlebar:not(headerbar).selection-mode label.separator, .selection-menu
-  .titlebar:not(headerbar).selection-mode .dim-label, .selection-menu
-  .titlebar:not(headerbar).selection-mode label.separator {
+  .titlebar:not(headerbar).selection-mode label.separator,
+  .selection-menu .titlebar:not(headerbar).selection-mode .dim-label,
+  .selection-menu .titlebar:not(headerbar).selection-mode label.separator {
     color: #151b1e; }
 
 /**********
@@ -3151,188 +3147,90 @@ menubar, .menubar {
 /******
  ! Menu
 *******/
-menu,
-.menu,
-.context-menu {
+menu, .menu, .context-menu {
   border: 0;
   border-radius: 0;
   padding: 0px;
   background-color: #1e272b;
   color: #ead49b; }
-  .csd menu, .csd
-  .menu, .csd
-  .context-menu {
+  .csd menu,
+  .csd .menu,
+  .csd .context-menu {
     border: 0; }
-  menu:selected,
-  .menu:selected,
-  .context-menu:selected {
+  menu:selected, .menu:selected, .context-menu:selected {
     background-color: #1e272b; }
-  menu separator, .csd menu separator,
-  .menu separator, .csd
-  .menu separator,
-  .context-menu separator, .csd
-  .context-menu separator {
+  menu separator, .csd menu separator, .menu separator, .csd .menu separator, .context-menu separator, .csd .context-menu separator {
     background-color: #1b2327;
     margin: -2px 0; }
-  menu .separator, .csd menu .separator,
-  .menu .separator, .csd
-  .menu .separator,
-  .context-menu .separator, .csd
-  .context-menu .separator {
+  menu .separator, .csd menu .separator, .menu .separator, .csd .menu .separator, .context-menu .separator, .csd .context-menu .separator {
     color: #1b2327; }
-  menu menuitem,
-  .menu menuitem,
-  .context-menu menuitem {
+  menu menuitem, .menu menuitem, .context-menu menuitem {
     min-height: 16px;
     min-width: 40px;
     padding: 0px;
     border-radius: 0; }
-    menu menuitem:active, menu menuitem:hover,
-    .menu menuitem:active,
-    .menu menuitem:hover,
-    .context-menu menuitem:active,
-    .context-menu menuitem:hover {
+    menu menuitem:active, menu menuitem:hover, .menu menuitem:active, .menu menuitem:hover, .context-menu menuitem:active, .context-menu menuitem:hover {
       border: 0;
       background-color: #1e272b;
       background-image: none;
       color: #78824b; }
-    menu menuitem *:active, menu menuitem *:hover,
-    .menu menuitem *:active,
-    .menu menuitem *:hover,
-    .context-menu menuitem *:active,
-    .context-menu menuitem *:hover {
+    menu menuitem *:active, menu menuitem *:hover, .menu menuitem *:active, .menu menuitem *:hover, .context-menu menuitem *:active, .context-menu menuitem *:hover {
       color: #78824b; }
-    menu menuitem:disabled, menu menuitem *:disabled,
-    .menu menuitem:disabled,
-    .menu menuitem *:disabled,
-    .context-menu menuitem:disabled,
-    .context-menu menuitem *:disabled {
+    menu menuitem:disabled, menu menuitem *:disabled, .menu menuitem:disabled, .menu menuitem *:disabled, .context-menu menuitem:disabled, .context-menu menuitem *:disabled {
       color: mix(#ead49b,#1e272b,0.5); }
-    menu menuitem arrow,
-    .menu menuitem arrow,
-    .context-menu menuitem arrow {
+    menu menuitem arrow, .menu menuitem arrow, .context-menu menuitem arrow {
       min-height: 16px;
       min-width: 16px; }
-      menu menuitem arrow:dir(ltr),
-      .menu menuitem arrow:dir(ltr),
-      .context-menu menuitem arrow:dir(ltr) {
+      menu menuitem arrow:dir(ltr), .menu menuitem arrow:dir(ltr), .context-menu menuitem arrow:dir(ltr) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
         margin-left: 10px; }
-      menu menuitem arrow:dir(rtl),
-      .menu menuitem arrow:dir(rtl),
-      .context-menu menuitem arrow:dir(rtl) {
+      menu menuitem arrow:dir(rtl), .menu menuitem arrow:dir(rtl), .context-menu menuitem arrow:dir(rtl) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
         margin-right: 10px; }
-    menu menuitem.button, menu menuitem.button:focus, menu menuitem.button:active, menu menuitem.button:disabled, menu menuitem.button:active:disabled, menu menuitem.button.flat, menu menuitem.button.flat:focus, menu menuitem.button.flat:active, menu menuitem.button.flat:disabled, menu menuitem.button.flat:active:disabled,
-    .menu menuitem.button,
-    .menu menuitem.button:focus,
-    .menu menuitem.button:active,
-    .menu menuitem.button:disabled,
-    .menu menuitem.button:active:disabled,
-    .menu menuitem.button.flat,
-    .menu menuitem.button.flat:focus,
-    .menu menuitem.button.flat:active,
-    .menu menuitem.button.flat:disabled,
-    .menu menuitem.button.flat:active:disabled,
-    .context-menu menuitem.button,
-    .context-menu menuitem.button:focus,
-    .context-menu menuitem.button:active,
-    .context-menu menuitem.button:disabled,
-    .context-menu menuitem.button:active:disabled,
-    .context-menu menuitem.button.flat,
-    .context-menu menuitem.button.flat:focus,
-    .context-menu menuitem.button.flat:active,
-    .context-menu menuitem.button.flat:disabled,
-    .context-menu menuitem.button.flat:active:disabled {
+    menu menuitem.button, menu menuitem.button:focus, menu menuitem.button:active, menu menuitem.button:disabled, menu menuitem.button:active:disabled, menu menuitem.button.flat, menu menuitem.button.flat:focus, menu menuitem.button.flat:active, menu menuitem.button.flat:disabled, menu menuitem.button.flat:active:disabled, .menu menuitem.button, .menu menuitem.button:focus, .menu menuitem.button:active, .menu menuitem.button:disabled, .menu menuitem.button:active:disabled, .menu menuitem.button.flat, .menu menuitem.button.flat:focus, .menu menuitem.button.flat:active, .menu menuitem.button.flat:disabled, .menu menuitem.button.flat:active:disabled, .context-menu menuitem.button, .context-menu menuitem.button:focus, .context-menu menuitem.button:active, .context-menu menuitem.button:disabled, .context-menu menuitem.button:active:disabled, .context-menu menuitem.button.flat, .context-menu menuitem.button.flat:focus, .context-menu menuitem.button.flat:active, .context-menu menuitem.button.flat:disabled, .context-menu menuitem.button.flat:active:disabled {
       background-color: transparent;
       background-image: none;
       border: 0;
       box-shadow: none;
       color: currentColor; }
-    menu menuitem.button:hover, menu menuitem.button:focus:hover, menu menuitem.button:active:hover, menu menuitem.button:selected, menu menuitem.button.flat:hover, menu menuitem.button.flat:focus:hover, menu menuitem.button.flat:active:hover, menu menuitem.button.flat:selected,
-    .menu menuitem.button:hover,
-    .menu menuitem.button:focus:hover,
-    .menu menuitem.button:active:hover,
-    .menu menuitem.button:selected,
-    .menu menuitem.button.flat:hover,
-    .menu menuitem.button.flat:focus:hover,
-    .menu menuitem.button.flat:active:hover,
-    .menu menuitem.button.flat:selected,
-    .context-menu menuitem.button:hover,
-    .context-menu menuitem.button:focus:hover,
-    .context-menu menuitem.button:active:hover,
-    .context-menu menuitem.button:selected,
-    .context-menu menuitem.button.flat:hover,
-    .context-menu menuitem.button.flat:focus:hover,
-    .context-menu menuitem.button.flat:active:hover,
-    .context-menu menuitem.button.flat:selected {
+    menu menuitem.button:hover, menu menuitem.button:focus:hover, menu menuitem.button:active:hover, menu menuitem.button:selected, menu menuitem.button.flat:hover, menu menuitem.button.flat:focus:hover, menu menuitem.button.flat:active:hover, menu menuitem.button.flat:selected, .menu menuitem.button:hover, .menu menuitem.button:focus:hover, .menu menuitem.button:active:hover, .menu menuitem.button:selected, .menu menuitem.button.flat:hover, .menu menuitem.button.flat:focus:hover, .menu menuitem.button.flat:active:hover, .menu menuitem.button.flat:selected, .context-menu menuitem.button:hover, .context-menu menuitem.button:focus:hover, .context-menu menuitem.button:active:hover, .context-menu menuitem.button:selected, .context-menu menuitem.button.flat:hover, .context-menu menuitem.button.flat:focus:hover, .context-menu menuitem.button.flat:active:hover, .context-menu menuitem.button.flat:selected {
       background-image: none;
       background-color: #1e272b;
       color: #78824b; }
-    menu menuitem calendar,
-    .menu menuitem calendar,
-    .context-menu menuitem calendar {
+    menu menuitem calendar, .menu menuitem calendar, .context-menu menuitem calendar {
       color: #ead49b; }
-      menu menuitem calendar.header,
-      .menu menuitem calendar.header,
-      .context-menu menuitem calendar.header {
+      menu menuitem calendar.header, .menu menuitem calendar.header, .context-menu menuitem calendar.header {
         border-bottom: 1px solid #1b2327;
         border-radius: 0; }
-        menu menuitem calendar.header:backdrop,
-        .menu menuitem calendar.header:backdrop,
-        .context-menu menuitem calendar.header:backdrop {
+        menu menuitem calendar.header:backdrop, .menu menuitem calendar.header:backdrop, .context-menu menuitem calendar.header:backdrop {
           border-color: #1b2327; }
-      menu menuitem calendar.button,
-      .menu menuitem calendar.button,
-      .context-menu menuitem calendar.button {
+      menu menuitem calendar.button, .menu menuitem calendar.button, .context-menu menuitem calendar.button {
         color: rgba(234, 212, 155, 0.55); }
-        menu menuitem calendar.button:hover,
-        .menu menuitem calendar.button:hover,
-        .context-menu menuitem calendar.button:hover {
+        menu menuitem calendar.button:hover, .menu menuitem calendar.button:hover, .context-menu menuitem calendar.button:hover {
           color: #ead49b; }
-      menu menuitem calendar:indeterminate, menu menuitem calendar:indeterminate:backdrop,
-      .menu menuitem calendar:indeterminate,
-      .menu menuitem calendar:indeterminate:backdrop,
-      .context-menu menuitem calendar:indeterminate,
-      .context-menu menuitem calendar:indeterminate:backdrop {
+      menu menuitem calendar:indeterminate, menu menuitem calendar:indeterminate:backdrop, .menu menuitem calendar:indeterminate, .menu menuitem calendar:indeterminate:backdrop, .context-menu menuitem calendar:indeterminate, .context-menu menuitem calendar:indeterminate:backdrop {
         color: mix(#ead49b,#1e272b,0.5); }
-    menu menuitem label:dir(rtl), menu menuitem label:dir(ltr),
-    .menu menuitem label:dir(rtl),
-    .menu menuitem label:dir(ltr),
-    .context-menu menuitem label:dir(rtl),
-    .context-menu menuitem label:dir(ltr) {
+    menu menuitem label:dir(rtl), menu menuitem label:dir(ltr), .menu menuitem label:dir(rtl), .menu menuitem label:dir(ltr), .context-menu menuitem label:dir(rtl), .context-menu menuitem label:dir(ltr) {
       color: inherit; }
-  menu > arrow,
-  .menu > arrow,
-  .context-menu > arrow {
+  menu > arrow, .menu > arrow, .context-menu > arrow {
     min-height: 16px;
     min-width: 16px;
     padding: 0px;
     background-color: #1e272b;
     border-radius: 0; }
-    menu > arrow.top,
-    .menu > arrow.top,
-    .context-menu > arrow.top {
+    menu > arrow.top, .menu > arrow.top, .context-menu > arrow.top {
       margin-top: -6px;
       border-bottom: 1px solid mix(#1e272b,#ead49b,0.1);
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
-    menu > arrow.bottom,
-    .menu > arrow.bottom,
-    .context-menu > arrow.bottom {
+    menu > arrow.bottom, .menu > arrow.bottom, .context-menu > arrow.bottom {
       margin-bottom: -6px;
       border-top: 1px solid mix(#1e272b,#ead49b,0.1);
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
-    menu > arrow:hover,
-    .menu > arrow:hover,
-    .context-menu > arrow:hover {
+    menu > arrow:hover, .menu > arrow:hover, .context-menu > arrow:hover {
       background-color: mix(#1e272b,#ead49b,0.1); }
-    menu > arrow:backdrop,
-    .menu > arrow:backdrop,
-    .context-menu > arrow:backdrop {
+    menu > arrow:backdrop, .menu > arrow:backdrop, .context-menu > arrow:backdrop {
       background-color: mix(#ead49b,#ead49b,0.2); }
-    menu > arrow:disabled,
-    .menu > arrow:disabled,
-    .context-menu > arrow:disabled {
+    menu > arrow:disabled, .menu > arrow:disabled, .context-menu > arrow:disabled {
       color: transparent;
       background-color: transparent;
       border-color: transparent; }
