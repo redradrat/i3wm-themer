@@ -21,7 +21,7 @@ color15_i3wmthemer	    = ${xrdb:color15}
 [bar/main_bar]
 bottom = false
 width = 90%
-height = 20
+height = 45
 offset-x = 5%
 offset-y = 1%
 radius = 0.0
